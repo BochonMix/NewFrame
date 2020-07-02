@@ -1,0 +1,58 @@
+body {
+  height: 100%;
+}
+body {
+ background: rgb(128,81,39);
+background: radial-gradient(circle, rgba(218,142,74) 0%, rgba(128,81,39) 100%);
+};
+  min-height: 100%;
+  overflow: hidden;
+}
+
+$delay:   (0,4s,2s,18s,0,3s,7s,12s,2s,0,0,4s,2s,14s,0,3s,7s,15s,2s,0);
+$position:(25%,70%,10%,40%,65%,75%,35%,50%,20%,85%,20%,60%,5%,30%,90%,82%,5%,45%,22%,95%);
+
+.animated-bg {
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  
+  span {
+    display:block;
+    position:absolute;
+    top:-150px;
+    animation:anim-bg 20s linear infinite;
+    border-radius:50%;
+    background-color:rgba(255,255,255,.5);
+    
+    @for $i from 1 through 20 {
+      &:nth-of-type(#{$i}) {
+        $w-h: random(20) + px;
+        left: nth($position, $i);
+        width: $w-h;
+        height: $w-h;
+        @if $i != 0 {
+          animation-delay:nth($delay, $i);
+        }
+      }
+    }
+  }
+}
+
+@keyframes anim-bg {
+  0% {
+      transform:translateY(0px) scale(1);
+      opacity:1;
+     }
+  50% {
+    
+      transform:translateY(500px) scale(.3);
+      opacity:.5;
+  }
+  100% {
+      transform:translateY(1000px) scale(1);
+      opacity:0;
+     }
+}
