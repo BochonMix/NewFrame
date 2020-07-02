@@ -1,12 +1,6 @@
 body {
-  height: 100%;
-}
-body {
- background: rgb(128,81,39);
-background: radial-gradient(circle, rgba(218,142,74) 0%, rgba(128,81,39) 100%);
-};
-  min-height: 100%;
-  overflow: hidden;
+  background-color:rgb(random(218),random(142),random(74));;
+  overflow:hidden;
 }
 
 $delay:   (0,4s,2s,18s,0,3s,7s,12s,2s,0,0,4s,2s,14s,0,3s,7s,15s,2s,0);
